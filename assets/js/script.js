@@ -11,21 +11,24 @@ $(function () {
     $(".time-block").each(function() {
         // stores a reference to each time block id in numerical form
         let timeBlock = parseInt($(this).attr("id"));
+        // applies past class to time block if its ID is less than the current time in hours
         if (timeBlock < currentHour) {
             $(this).addClass("past");
             $(this).removeClass("present");
             $(this).removeClass("future");
+        // applies present class to time block if its ID is strictly equal to the current time in hours
         } else if (timeBlock === currentHour) {
             $(this).addClass("present");
             $(this).removeClass("past");
             $(this).removeClass("future");
+        // applies future class to time block if its ID is greater than the current time in hours
         } else {
             $(this).addClass("future");
             $(this).removeClass("past");
             $(this).removeClass("present");
         }
     })
-
+    // event listener for all save buttons, stores references to the relevant time block's ID (aka the hour it represents) and the user input in the time block's text area, sets these values in local storage
     saveButton.on("click", function() {
         const notes = $(this).siblings(".description").val();
         const time = $(this).parent().attr("id");
@@ -33,6 +36,7 @@ $(function () {
     })
 })
 
+// updates content of time block textareas with their corresponding values saved in local storage
 $("#9 textarea").val(localStorage.getItem("9"));
 $("#10 textarea").val(localStorage.getItem("10"));
 $("#11 textarea").val(localStorage.getItem("11"));
