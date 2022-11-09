@@ -6,4 +6,8 @@ This assignment entailed making a responsive, color-coded daily planner that all
 
 # Live Link
 
+https://zestnachow.github.io/Daily-Planner/
+
 # Screenshot
+
+![Planner Screenshot](./assets/images/Daily-Planner-Screenshot.png?raw=true "Planner Screenshot")
